@@ -1,13 +1,13 @@
 {
   "categories": [
-    { "name": "People", "icon": "person", "display_order": 0 },
-    { "name": "Feelings", "icon": "heart", "display_order": 1 },
-    { "name": "Needs", "icon": "exclamation", "display_order": 2 },
-    { "name": "Actions", "icon": "lightning", "display_order": 3 },
-    { "name": "Places", "icon": "pin", "display_order": 4 },
-    { "name": "Food", "icon": "fork_knife", "display_order": 5 },
-    { "name": "Things", "icon": "star", "display_order": 6 },
-    { "name": "Modifiers", "icon": "sparkle", "display_order": 7 }
+    { "name": "People", "icon": "\uD83D\uDC64", "display_order": 0 },
+    { "name": "Feelings", "icon": "\u2764\uFE0F", "display_order": 1 },
+    { "name": "Needs", "icon": "\u2757", "display_order": 2 },
+    { "name": "Actions", "icon": "\u26A1", "display_order": 3 },
+    { "name": "Places", "icon": "\uD83D\uDCCD", "display_order": 4 },
+    { "name": "Food", "icon": "\uD83C\uDF7D\uFE0F", "display_order": 5 },
+    { "name": "Things", "icon": "\u2B50", "display_order": 6 },
+    { "name": "Modifiers", "icon": "\u2728", "display_order": 7 }
   ],
   "emojis": [
 
