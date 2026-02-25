@@ -1,0 +1,59 @@
+{
+  "categories": [
+    { "name": "People", "icon": "person", "display_order": 0 },
+    { "name": "Feelings", "icon": "heart", "display_order": 1 },
+    { "name": "Needs", "icon": "exclamation", "display_order": 2 },
+    { "name": "Actions", "icon": "lightning", "display_order": 3 },
+    { "name": "Food", "icon": "fork_knife", "display_order": 4 }
+  ],
+  "emojis": [
+    {
+      "emoji": "\uD83E\uDEF5",
+      "category": "people",
+      "solo": "I need something",
+      "chain": { "default": "I" },
+      "tags": ["self", "me", "I"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83D\uDE22",
+      "category": "feelings",
+      "solo": "I feel sad",
+      "chain": { "default": "sad", "after_i": "feel sad" },
+      "tags": ["emotion", "sad", "crying"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE0A",
+      "category": "feelings",
+      "solo": "I feel happy",
+      "chain": { "default": "happy", "after_i": "feel happy" },
+      "tags": ["emotion", "happy", "smile"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83C\uDF54",
+      "category": "food",
+      "solo": "I want a hamburger",
+      "chain": { "default": "a hamburger", "after_i": "want a hamburger" },
+      "tags": ["food", "burger", "hungry"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDCA4",
+      "category": "needs",
+      "solo": "I am tired",
+      "chain": { "default": "tired", "after_i": "am tired" },
+      "tags": ["tired", "sleep", "rest"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\u2764\uFE0F",
+      "category": "actions",
+      "solo": "I love you",
+      "chain": { "default": "love", "after_i": "love" },
+      "tags": ["love", "heart"],
+      "grammar_role": "verb"
+    }
+  ]
+}
