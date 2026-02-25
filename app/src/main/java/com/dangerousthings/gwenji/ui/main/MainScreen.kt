@@ -85,7 +85,7 @@ fun MainScreen(
                 modifier = Modifier.weight(1f)
             )
 
-            // "Say it!" button at bottom
+            // "Say it!" / "Stop" button at bottom
             Button(
                 onClick = {
                     if (speechProgress.isSpeaking) {
@@ -94,7 +94,7 @@ fun MainScreen(
                         viewModel.speak()
                     }
                 },
-                enabled = !speechProgress.isSpeaking &&
+                enabled = speechProgress.isSpeaking ||
                     uiState.assemblyResult.text.isNotBlank(),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -106,7 +106,7 @@ fun MainScreen(
                 )
             ) {
                 Text(
-                    text = if (speechProgress.isSpeaking) "Speaking..." else "Say it!",
+                    text = if (speechProgress.isSpeaking) "Stop" else "Say it!",
                     style = MaterialTheme.typography.titleLarge
                 )
             }

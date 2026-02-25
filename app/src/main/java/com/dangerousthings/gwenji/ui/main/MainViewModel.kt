@@ -28,7 +28,7 @@ data class MainUiState(
 class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val emojiRepository = EmojiRepository(application)
     private val assembler = SentenceAssembler()
-    private val ttsManager = TtsManager(application)
+    private val ttsManager = TtsManager.getInstance(application)
     private val database = GwenjiDatabase.getDatabase(application)
     private val historyDao = database.historyDao()
 
@@ -99,6 +99,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     override fun onCleared() {
         super.onCleared()
-        ttsManager.shutdown()
+        ttsManager.stop()
     }
 }

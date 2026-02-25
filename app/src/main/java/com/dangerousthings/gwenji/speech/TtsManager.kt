@@ -14,12 +14,23 @@ data class SpeechProgress(
     val currentCharEnd: Int = -1
 )
 
-class TtsManager(context: Context) {
+class TtsManager private constructor(context: Context) {
     private var tts: TextToSpeech? = null
     private var isInitialized = false
     private val _progress = MutableStateFlow(SpeechProgress())
     val progress: StateFlow<SpeechProgress> = _progress
     private var onDone: (() -> Unit)? = null
+
+    companion object {
+        @Volatile
+        private var INSTANCE: TtsManager? = null
+
+        fun getInstance(context: Context): TtsManager {
+            return INSTANCE ?: synchronized(this) {
+                INSTANCE ?: TtsManager(context.applicationContext).also { INSTANCE = it }
+            }
+        }
+    }
 
     init {
         tts = TextToSpeech(context) { status ->
