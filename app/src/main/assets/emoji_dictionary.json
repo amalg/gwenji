@@ -4,249 +4,1219 @@
     { "name": "Feelings", "icon": "heart", "display_order": 1 },
     { "name": "Needs", "icon": "exclamation", "display_order": 2 },
     { "name": "Actions", "icon": "lightning", "display_order": 3 },
-    { "name": "Places", "icon": "location", "display_order": 4 },
-    { "name": "Food", "icon": "fork_knife", "display_order": 5 }
+    { "name": "Places", "icon": "pin", "display_order": 4 },
+    { "name": "Food", "icon": "fork_knife", "display_order": 5 },
+    { "name": "Things", "icon": "star", "display_order": 6 },
+    { "name": "Modifiers", "icon": "sparkle", "display_order": 7 }
   ],
   "emojis": [
+
     {
       "emoji": "\uD83E\uDEF5",
       "category": "people",
       "solo": "I need something",
       "chain": { "default": "I" },
-      "tags": ["self", "me", "I"],
+      "tags": ["self", "me", "I", "myself"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83D\uDC49",
+      "category": "people",
+      "solo": "You",
+      "chain": { "default": "you", "after_i": "want you" },
+      "tags": ["you", "your", "person", "point"],
       "grammar_role": "subject"
     },
     {
       "emoji": "\uD83D\uDC69",
       "category": "people",
       "solo": "Mom",
-      "chain": { "default": "mom", "after_i": "want mom" },
-      "tags": ["mom", "mother", "parent", "woman"],
+      "chain": { "default": "mom", "after_i": "want mom", "after_want": "mom" },
+      "tags": ["mom", "mother", "mama", "mommy", "parent", "woman"],
       "grammar_role": "subject"
     },
     {
       "emoji": "\uD83D\uDC68",
       "category": "people",
       "solo": "Dad",
-      "chain": { "default": "dad", "after_i": "want dad" },
-      "tags": ["dad", "father", "parent", "man"],
+      "chain": { "default": "dad", "after_i": "want dad", "after_want": "dad" },
+      "tags": ["dad", "father", "papa", "daddy", "parent", "man"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83D\uDC66",
+      "category": "people",
+      "solo": "Brother",
+      "chain": { "default": "brother", "after_i": "want brother", "after_want": "brother" },
+      "tags": ["brother", "boy", "sibling", "bro"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83D\uDC67",
+      "category": "people",
+      "solo": "Sister",
+      "chain": { "default": "sister", "after_i": "want sister", "after_want": "sister" },
+      "tags": ["sister", "girl", "sibling", "sis"],
       "grammar_role": "subject"
     },
     {
       "emoji": "\uD83D\uDC76",
       "category": "people",
       "solo": "Baby",
-      "chain": { "default": "baby" },
-      "tags": ["baby", "child", "sibling"],
+      "chain": { "default": "the baby", "after_i": "see the baby", "after_want": "the baby" },
+      "tags": ["baby", "infant", "little", "child"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83E\uDDD1\u200D\uD83E\uDD1D\u200D\uD83E\uDDD1",
+      "category": "people",
+      "solo": "Friend",
+      "chain": { "default": "my friend", "after_i": "want my friend", "after_want": "my friend" },
+      "tags": ["friend", "buddy", "pal", "friends", "together"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83E\uDDD1\u200D\uD83C\uDFEB",
+      "category": "people",
+      "solo": "Teacher",
+      "chain": { "default": "the teacher", "after_i": "need the teacher", "after_want": "the teacher" },
+      "tags": ["teacher", "school", "class", "instructor"],
       "grammar_role": "subject"
     },
     {
       "emoji": "\uD83E\uDDD1\u200D\u2695\uFE0F",
       "category": "people",
       "solo": "Doctor",
-      "chain": { "default": "the doctor", "after_i": "need the doctor" },
-      "tags": ["doctor", "health", "medical", "help"],
+      "chain": { "default": "the doctor", "after_i": "need the doctor", "after_want": "the doctor" },
+      "tags": ["doctor", "hospital", "medical", "health", "nurse"],
       "grammar_role": "subject"
     },
+    {
+      "emoji": "\uD83D\uDC6A",
+      "category": "people",
+      "solo": "Family",
+      "chain": { "default": "my family", "after_i": "want my family", "after_want": "my family" },
+      "tags": ["family", "everyone", "together", "relatives"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83D\uDC75",
+      "category": "people",
+      "solo": "Grandma",
+      "chain": { "default": "grandma", "after_i": "want grandma", "after_want": "grandma" },
+      "tags": ["grandma", "grandmother", "nana", "granny", "abuela"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83D\uDC74",
+      "category": "people",
+      "solo": "Grandpa",
+      "chain": { "default": "grandpa", "after_i": "want grandpa", "after_want": "grandpa" },
+      "tags": ["grandpa", "grandfather", "papa", "gramps", "abuelo"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83D\uDC31",
+      "category": "people",
+      "solo": "Pet",
+      "chain": { "default": "the pet", "after_i": "want the pet", "after_want": "the pet" },
+      "tags": ["pet", "cat", "dog", "animal", "kitty", "puppy"],
+      "grammar_role": "subject"
+    },
+    {
+      "emoji": "\uD83E\uDDD2",
+      "category": "people",
+      "solo": "Kid",
+      "chain": { "default": "the kid", "after_i": "see the kid", "after_want": "the kid" },
+      "tags": ["kid", "child", "classmate", "other kid", "person"],
+      "grammar_role": "subject"
+    },
+
     {
       "emoji": "\uD83D\uDE0A",
       "category": "feelings",
       "solo": "I feel happy",
-      "chain": { "default": "happy", "after_i": "feel happy" },
-      "tags": ["emotion", "happy", "smile", "glad", "joy"],
+      "chain": { "default": "happy", "after_i": "feel happy", "after_feel": "happy" },
+      "tags": ["happy", "glad", "joy", "smile", "cheerful", "good mood"],
       "grammar_role": "descriptor"
     },
     {
       "emoji": "\uD83D\uDE22",
       "category": "feelings",
       "solo": "I feel sad",
-      "chain": { "default": "sad", "after_i": "feel sad" },
-      "tags": ["emotion", "sad", "crying", "upset"],
+      "chain": { "default": "sad", "after_i": "feel sad", "after_feel": "sad" },
+      "tags": ["sad", "upset", "crying", "unhappy", "down"],
       "grammar_role": "descriptor"
     },
     {
       "emoji": "\uD83D\uDE21",
       "category": "feelings",
       "solo": "I feel angry",
-      "chain": { "default": "angry", "after_i": "feel angry" },
-      "tags": ["emotion", "angry", "mad", "frustrated"],
+      "chain": { "default": "angry", "after_i": "feel angry", "after_feel": "angry" },
+      "tags": ["angry", "mad", "frustrated", "furious", "annoyed"],
       "grammar_role": "descriptor"
     },
     {
       "emoji": "\uD83D\uDE28",
       "category": "feelings",
       "solo": "I feel scared",
-      "chain": { "default": "scared", "after_i": "feel scared" },
-      "tags": ["emotion", "scared", "afraid", "fear"],
-      "grammar_role": "descriptor"
-    },
-    {
-      "emoji": "\uD83E\uDD12",
-      "category": "feelings",
-      "solo": "I feel sick",
-      "chain": { "default": "sick", "after_i": "feel sick" },
-      "tags": ["emotion", "sick", "ill", "unwell", "nauseous"],
-      "grammar_role": "descriptor"
-    },
-    {
-      "emoji": "\uD83E\uDD14",
-      "category": "feelings",
-      "solo": "I am confused",
-      "chain": { "default": "confused", "after_i": "am confused" },
-      "tags": ["emotion", "confused", "thinking", "unsure"],
+      "chain": { "default": "scared", "after_i": "feel scared", "after_feel": "scared" },
+      "tags": ["scared", "afraid", "fear", "frightened", "terrified"],
       "grammar_role": "descriptor"
     },
     {
       "emoji": "\uD83D\uDE34",
       "category": "feelings",
       "solo": "I feel tired",
-      "chain": { "default": "tired", "after_i": "feel tired" },
-      "tags": ["emotion", "tired", "sleepy", "exhausted"],
+      "chain": { "default": "tired", "after_i": "feel tired", "after_feel": "tired" },
+      "tags": ["tired", "sleepy", "exhausted", "drowsy", "worn out"],
       "grammar_role": "descriptor"
     },
     {
-      "emoji": "\uD83E\uDD17",
+      "emoji": "\uD83E\uDD12",
       "category": "feelings",
-      "solo": "I want a hug",
-      "chain": { "default": "hugged", "after_i": "want a hug" },
-      "tags": ["emotion", "hug", "comfort", "love", "affection"],
+      "solo": "I feel sick",
+      "chain": { "default": "sick", "after_i": "feel sick", "after_feel": "sick" },
+      "tags": ["sick", "ill", "unwell", "nauseous", "not feeling good"],
       "grammar_role": "descriptor"
     },
     {
-      "emoji": "\uD83D\uDCA4",
+      "emoji": "\uD83E\uDD15",
+      "category": "feelings",
+      "solo": "I am hurt",
+      "chain": { "default": "hurt", "after_i": "am hurt", "after_feel": "hurt" },
+      "tags": ["hurt", "pain", "ow", "ouch", "injured", "sore"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83E\uDD70",
+      "category": "feelings",
+      "solo": "I feel loved",
+      "chain": { "default": "loved", "after_i": "feel loved", "after_feel": "loved" },
+      "tags": ["love", "loved", "affection", "hearts", "warm"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83E\uDD29",
+      "category": "feelings",
+      "solo": "I feel excited",
+      "chain": { "default": "excited", "after_i": "feel excited", "after_feel": "excited" },
+      "tags": ["excited", "yay", "thrilled", "pumped", "can't wait"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE12",
+      "category": "feelings",
+      "solo": "I feel bored",
+      "chain": { "default": "bored", "after_i": "feel bored", "after_feel": "bored" },
+      "tags": ["bored", "boring", "nothing to do", "dull"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83E\uDD14",
+      "category": "feelings",
+      "solo": "I am confused",
+      "chain": { "default": "confused", "after_i": "am confused", "after_feel": "confused" },
+      "tags": ["confused", "thinking", "unsure", "puzzled", "don't understand"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE32",
+      "category": "feelings",
+      "solo": "I am surprised",
+      "chain": { "default": "surprised", "after_i": "am surprised", "after_feel": "surprised" },
+      "tags": ["surprised", "shocked", "wow", "whoa", "amazed"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE1F",
+      "category": "feelings",
+      "solo": "I feel worried",
+      "chain": { "default": "worried", "after_i": "feel worried", "after_feel": "worried" },
+      "tags": ["worried", "anxious", "nervous", "concerned", "uneasy"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE33",
+      "category": "feelings",
+      "solo": "I feel embarrassed",
+      "chain": { "default": "embarrassed", "after_i": "feel embarrassed", "after_feel": "embarrassed" },
+      "tags": ["embarrassed", "shy", "awkward", "ashamed", "blushing"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE0E",
+      "category": "feelings",
+      "solo": "I feel proud",
+      "chain": { "default": "proud", "after_i": "feel proud", "after_feel": "proud" },
+      "tags": ["proud", "cool", "confident", "accomplished"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83E\uDD2A",
+      "category": "feelings",
+      "solo": "I feel silly",
+      "chain": { "default": "silly", "after_i": "feel silly", "after_feel": "silly" },
+      "tags": ["silly", "goofy", "funny", "playful", "wacky"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE0C",
+      "category": "feelings",
+      "solo": "I feel calm",
+      "chain": { "default": "calm", "after_i": "feel calm", "after_feel": "calm" },
+      "tags": ["calm", "relaxed", "peaceful", "chill", "serene"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE30",
+      "category": "feelings",
+      "solo": "I feel nervous",
+      "chain": { "default": "nervous", "after_i": "feel nervous", "after_feel": "nervous" },
+      "tags": ["nervous", "anxious", "worried", "tense", "uneasy"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE14",
+      "category": "feelings",
+      "solo": "I feel lonely",
+      "chain": { "default": "lonely", "after_i": "feel lonely", "after_feel": "lonely" },
+      "tags": ["lonely", "alone", "by myself", "isolated"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83E\uDD76",
+      "category": "feelings",
+      "solo": "I feel cold",
+      "chain": { "default": "cold", "after_i": "feel cold", "after_feel": "cold" },
+      "tags": ["cold", "freezing", "chilly", "shivering"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83E\uDD75",
+      "category": "feelings",
+      "solo": "I feel hot",
+      "chain": { "default": "hot", "after_i": "feel hot", "after_feel": "hot" },
+      "tags": ["hot", "warm", "sweaty", "overheated"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83E\uDD24",
+      "category": "feelings",
+      "solo": "I feel hungry",
+      "chain": { "default": "hungry", "after_i": "feel hungry", "after_feel": "hungry" },
+      "tags": ["hungry", "starving", "want food", "need food"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDCA6",
+      "category": "feelings",
+      "solo": "I feel thirsty",
+      "chain": { "default": "thirsty", "after_i": "feel thirsty", "after_feel": "thirsty" },
+      "tags": ["thirsty", "need drink", "parched", "dry"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\uD83D\uDE2D",
+      "category": "feelings",
+      "solo": "I am crying",
+      "chain": { "default": "crying", "after_i": "am crying", "after_feel": "like crying" },
+      "tags": ["crying", "tears", "sobbing", "weeping", "very sad"],
+      "grammar_role": "descriptor"
+    },
+
+    {
+      "emoji": "\uD83C\uDD98",
       "category": "needs",
-      "solo": "I need to sleep",
-      "chain": { "default": "sleep", "after_i": "need to sleep" },
-      "tags": ["tired", "sleep", "rest", "bed", "nap"],
+      "solo": "I need help",
+      "chain": { "default": "help", "after_i": "need help", "after_want": "help" },
+      "tags": ["help", "assist", "emergency", "sos", "need"],
       "grammar_role": "object"
     },
     {
       "emoji": "\uD83D\uDEBD",
       "category": "needs",
-      "solo": "I need the bathroom",
-      "chain": { "default": "bathroom", "after_i": "need the bathroom" },
-      "tags": ["bathroom", "toilet", "potty", "restroom"],
+      "solo": "I need to use the bathroom",
+      "chain": { "default": "the bathroom", "after_i": "need to use the bathroom", "after_want": "to use the bathroom" },
+      "tags": ["bathroom", "toilet", "potty", "restroom", "pee", "washroom"],
       "grammar_role": "object"
     },
     {
       "emoji": "\uD83D\uDCA7",
       "category": "needs",
       "solo": "I want water",
-      "chain": { "default": "water", "after_i": "want water" },
-      "tags": ["water", "drink", "thirsty"],
+      "chain": { "default": "water", "after_i": "want water", "after_want": "water" },
+      "tags": ["water", "drink", "thirsty", "hydrate"],
       "grammar_role": "object"
     },
     {
-      "emoji": "\uD83E\uDE7A",
+      "emoji": "\uD83C\uDF7D\uFE0F",
       "category": "needs",
-      "solo": "I need help",
-      "chain": { "default": "help", "after_i": "need help" },
-      "tags": ["help", "assist", "bandage", "hurt", "pain"],
+      "solo": "I want food",
+      "chain": { "default": "food", "after_i": "want food", "after_want": "food" },
+      "tags": ["food", "eat", "hungry", "meal", "snack", "dinner", "lunch"],
       "grammar_role": "object"
     },
     {
       "emoji": "\uD83D\uDC8A",
       "category": "needs",
       "solo": "I need medicine",
-      "chain": { "default": "medicine", "after_i": "need medicine" },
-      "tags": ["medicine", "pill", "medication", "health"],
+      "chain": { "default": "medicine", "after_i": "need medicine", "after_want": "medicine" },
+      "tags": ["medicine", "pill", "medication", "health", "drug"],
       "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDCA4",
+      "category": "needs",
+      "solo": "I need to sleep",
+      "chain": { "default": "sleep", "after_i": "need to sleep", "after_want": "to sleep" },
+      "tags": ["sleep", "tired", "nap", "rest", "bed", "bedtime"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDD17",
+      "category": "needs",
+      "solo": "I want a hug",
+      "chain": { "default": "a hug", "after_i": "want a hug", "after_want": "a hug" },
+      "tags": ["hug", "comfort", "cuddle", "hold", "affection"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDECB\uFE0F",
+      "category": "needs",
+      "solo": "I need a break",
+      "chain": { "default": "a break", "after_i": "need a break", "after_want": "a break" },
+      "tags": ["break", "rest", "pause", "stop", "relax", "time out"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDD2B",
+      "category": "needs",
+      "solo": "I need quiet",
+      "chain": { "default": "quiet", "after_i": "need quiet", "after_want": "quiet" },
+      "tags": ["quiet", "shh", "silence", "hush", "too loud"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDD0A",
+      "category": "needs",
+      "solo": "It is too loud",
+      "chain": { "default": "loud", "after_i": "think it is too loud", "after_feel": "overwhelmed" },
+      "tags": ["loud", "noise", "noisy", "volume", "too loud", "overwhelming"],
+      "grammar_role": "descriptor"
+    },
+    {
+      "emoji": "\u2795",
+      "category": "needs",
+      "solo": "I want more",
+      "chain": { "default": "more", "after_i": "want more", "after_want": "more" },
+      "tags": ["more", "again", "another", "extra", "plus"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\u2705",
+      "category": "needs",
+      "solo": "I am done",
+      "chain": { "default": "done", "after_i": "am done", "after_want": "to be done" },
+      "tags": ["done", "finished", "complete", "all done", "over"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDED1",
+      "category": "needs",
+      "solo": "Stop",
+      "chain": { "default": "stop", "after_i": "want to stop", "after_want": "to stop" },
+      "tags": ["stop", "no", "enough", "halt", "quit", "end"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDFE2",
+      "category": "needs",
+      "solo": "Go",
+      "chain": { "default": "go", "after_i": "want to go", "after_want": "to go" },
+      "tags": ["go", "leave", "start", "move", "let's go"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\u23F3",
+      "category": "needs",
+      "solo": "Wait",
+      "chain": { "default": "wait", "after_i": "need to wait", "after_want": "to wait" },
+      "tags": ["wait", "hold on", "patience", "not yet", "one moment"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDE4B",
+      "category": "needs",
+      "solo": "It is my turn",
+      "chain": { "default": "my turn", "after_i": "want my turn", "after_want": "my turn" },
+      "tags": ["turn", "my turn", "next", "share", "fair"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDDF9",
+      "category": "needs",
+      "solo": "I need to clean up",
+      "chain": { "default": "clean", "after_i": "need to clean up", "after_want": "to clean up" },
+      "tags": ["clean", "tidy", "wash", "mess", "organize"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDC55",
+      "category": "needs",
+      "solo": "I need to change clothes",
+      "chain": { "default": "change clothes", "after_i": "need to change clothes", "after_want": "to change clothes" },
+      "tags": ["change", "clothes", "outfit", "dress", "get dressed"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDEAA",
+      "category": "needs",
+      "solo": "I want to go outside",
+      "chain": { "default": "outside", "after_i": "want to go outside", "after_want": "to go outside" },
+      "tags": ["outside", "outdoors", "out", "door", "go out"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDEA9",
+      "category": "needs",
+      "solo": "I want my blanket",
+      "chain": { "default": "my blanket", "after_i": "want my blanket", "after_want": "my blanket" },
+      "tags": ["blanket", "cozy", "warm", "comfort", "cover", "snuggle"],
+      "grammar_role": "object"
+    },
+
+    {
+      "emoji": "\uD83D\uDC9B",
+      "category": "actions",
+      "solo": "I want that",
+      "chain": { "default": "want", "after_i": "want" },
+      "tags": ["want", "desire", "wish", "need", "would like"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDC97",
+      "category": "actions",
+      "solo": "I like that",
+      "chain": { "default": "like", "after_i": "like" },
+      "tags": ["like", "enjoy", "love", "favorite", "prefer"],
+      "grammar_role": "verb"
     },
     {
       "emoji": "\u2764\uFE0F",
       "category": "actions",
       "solo": "I love you",
       "chain": { "default": "love", "after_i": "love" },
-      "tags": ["love", "heart", "affection"],
+      "tags": ["love", "heart", "affection", "care", "adore"],
       "grammar_role": "verb"
     },
     {
-      "emoji": "\uD83D\uDC4D",
+      "emoji": "\uD83D\uDE0B",
       "category": "actions",
-      "solo": "Yes",
-      "chain": { "default": "yes" },
-      "tags": ["yes", "ok", "agree", "good", "thumbs up"],
-      "grammar_role": "modifier"
+      "solo": "I want to eat",
+      "chain": { "default": "eat", "after_i": "want to eat", "after_want": "to eat" },
+      "tags": ["eat", "food", "hungry", "meal", "munch", "chew", "yummy"],
+      "grammar_role": "verb"
     },
     {
-      "emoji": "\uD83D\uDC4E",
+      "emoji": "\uD83E\uDD64",
       "category": "actions",
-      "solo": "No",
-      "chain": { "default": "no" },
-      "tags": ["no", "disagree", "bad", "thumbs down", "stop"],
-      "grammar_role": "modifier"
+      "solo": "I want to drink",
+      "chain": { "default": "drink", "after_i": "want to drink", "after_want": "to drink" },
+      "tags": ["drink", "thirsty", "sip", "beverage", "cup"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83C\uDFBD",
+      "category": "actions",
+      "solo": "I want to play",
+      "chain": { "default": "play", "after_i": "want to play", "after_want": "to play" },
+      "tags": ["play", "fun", "game", "recess", "toy"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDCFA",
+      "category": "actions",
+      "solo": "I want to watch something",
+      "chain": { "default": "watch", "after_i": "want to watch", "after_want": "to watch" },
+      "tags": ["watch", "TV", "movie", "show", "video", "screen"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83C\uDFA7",
+      "category": "actions",
+      "solo": "I want to listen to music",
+      "chain": { "default": "listen", "after_i": "want to listen", "after_want": "to listen" },
+      "tags": ["listen", "music", "hear", "headphones", "sound", "audio"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDCD6",
+      "category": "actions",
+      "solo": "I want to read",
+      "chain": { "default": "read", "after_i": "want to read", "after_want": "to read" },
+      "tags": ["read", "book", "story", "reading"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDEB6",
+      "category": "actions",
+      "solo": "I want to go",
+      "chain": { "default": "go", "after_i": "want to go", "after_want": "to go" },
+      "tags": ["go", "walk", "move", "leave", "travel"],
+      "grammar_role": "verb"
     },
     {
       "emoji": "\uD83D\uDC4B",
       "category": "actions",
       "solo": "Hello",
       "chain": { "default": "hello" },
-      "tags": ["hello", "hi", "wave", "greeting", "bye"],
+      "tags": ["hello", "hi", "hey", "wave", "greeting", "bye", "goodbye"],
       "grammar_role": "greeting"
     },
     {
-      "emoji": "\uD83D\uDE4F",
+      "emoji": "\uD83D\uDC40",
       "category": "actions",
-      "solo": "Please",
-      "chain": { "default": "please" },
-      "tags": ["please", "thanks", "thank you", "grateful"],
-      "grammar_role": "modifier"
+      "solo": "Look at this",
+      "chain": { "default": "look", "after_i": "want to look", "after_want": "to look" },
+      "tags": ["look", "see", "watch", "eyes", "show me"],
+      "grammar_role": "verb"
     },
+    {
+      "emoji": "\u270B",
+      "category": "actions",
+      "solo": "Give me that",
+      "chain": { "default": "give", "after_i": "want you to give me", "after_want": "you to give me" },
+      "tags": ["give", "hand", "share", "pass", "let me have"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83E\uDD32",
+      "category": "actions",
+      "solo": "Take this",
+      "chain": { "default": "take", "after_i": "want to take", "after_want": "to take" },
+      "tags": ["take", "grab", "hold", "bring", "carry"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDD13",
+      "category": "actions",
+      "solo": "Open it",
+      "chain": { "default": "open", "after_i": "want to open", "after_want": "to open" },
+      "tags": ["open", "unlock", "uncover", "start"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDD12",
+      "category": "actions",
+      "solo": "Close it",
+      "chain": { "default": "close", "after_i": "want to close", "after_want": "to close" },
+      "tags": ["close", "shut", "lock", "off"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83E\uDDD8",
+      "category": "actions",
+      "solo": "I want to sit down",
+      "chain": { "default": "sit", "after_i": "want to sit down", "after_want": "to sit down" },
+      "tags": ["sit", "sit down", "chair", "seat", "rest"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83E\uDDCD",
+      "category": "actions",
+      "solo": "I want to stand up",
+      "chain": { "default": "stand", "after_i": "want to stand up", "after_want": "to stand up" },
+      "tags": ["stand", "stand up", "get up", "rise"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83C\uDFC3",
+      "category": "actions",
+      "solo": "I want to run",
+      "chain": { "default": "run", "after_i": "want to run", "after_want": "to run" },
+      "tags": ["run", "running", "fast", "sprint", "chase"],
+      "grammar_role": "verb"
+    },
+    {
+      "emoji": "\uD83D\uDD28",
+      "category": "actions",
+      "solo": "I want to make something",
+      "chain": { "default": "make", "after_i": "want to make", "after_want": "to make" },
+      "tags": ["make", "build", "create", "craft", "art"],
+      "grammar_role": "verb"
+    },
+
     {
       "emoji": "\uD83C\uDFE0",
       "category": "places",
       "solo": "I want to go home",
-      "chain": { "default": "home", "after_i": "want to go home" },
-      "tags": ["home", "house", "go home"],
+      "chain": { "default": "home", "after_i": "want to go home", "after_want": "to go home", "after_go": "home" },
+      "tags": ["home", "house", "my house", "go home"],
       "grammar_role": "object"
     },
     {
       "emoji": "\uD83C\uDFEB",
       "category": "places",
       "solo": "I want to go to school",
-      "chain": { "default": "school", "after_i": "want to go to school" },
-      "tags": ["school", "class", "learn"],
+      "chain": { "default": "school", "after_i": "want to go to school", "after_want": "to go to school", "after_go": "to school" },
+      "tags": ["school", "class", "classroom", "learn", "teacher"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDED2",
+      "category": "places",
+      "solo": "I want to go to the store",
+      "chain": { "default": "the store", "after_i": "want to go to the store", "after_want": "to go to the store", "after_go": "to the store" },
+      "tags": ["store", "shop", "shopping", "market", "grocery"],
       "grammar_role": "object"
     },
     {
       "emoji": "\uD83C\uDFDE\uFE0F",
       "category": "places",
+      "solo": "I want to go to the park",
+      "chain": { "default": "the park", "after_i": "want to go to the park", "after_want": "to go to the park", "after_go": "to the park" },
+      "tags": ["park", "playground", "outside", "nature", "swing", "slide"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDE97",
+      "category": "places",
+      "solo": "I want to go in the car",
+      "chain": { "default": "the car", "after_i": "want to go in the car", "after_want": "to go in the car", "after_go": "in the car" },
+      "tags": ["car", "drive", "ride", "vehicle", "van", "truck"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF33",
+      "category": "places",
       "solo": "I want to go outside",
-      "chain": { "default": "outside", "after_i": "want to go outside" },
-      "tags": ["outside", "park", "nature", "outdoors"],
+      "chain": { "default": "outside", "after_i": "want to go outside", "after_want": "to go outside", "after_go": "outside" },
+      "tags": ["outside", "outdoors", "nature", "yard", "garden", "fresh air"],
       "grammar_role": "object"
     },
     {
-      "emoji": "\uD83C\uDF54",
-      "category": "food",
-      "solo": "I want a hamburger",
-      "chain": { "default": "a hamburger", "after_i": "want a hamburger" },
-      "tags": ["food", "burger", "hamburger", "hungry", "meal"],
+      "emoji": "\uD83D\uDECF\uFE0F",
+      "category": "places",
+      "solo": "I want to go to my room",
+      "chain": { "default": "my room", "after_i": "want to go to my room", "after_want": "to go to my room", "after_go": "to my room" },
+      "tags": ["bedroom", "room", "my room", "bed", "private"],
       "grammar_role": "object"
     },
     {
-      "emoji": "\uD83C\uDF4E",
+      "emoji": "\uD83D\uDEC1",
+      "category": "places",
+      "solo": "I need to go to the bathroom",
+      "chain": { "default": "the bathroom", "after_i": "need to go to the bathroom", "after_want": "to go to the bathroom", "after_go": "to the bathroom" },
+      "tags": ["bathroom", "bath", "shower", "tub", "wash"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF73",
+      "category": "places",
+      "solo": "I want to go to the kitchen",
+      "chain": { "default": "the kitchen", "after_i": "want to go to the kitchen", "after_want": "to go to the kitchen", "after_go": "to the kitchen" },
+      "tags": ["kitchen", "cook", "cooking", "food", "fridge"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDFA0",
+      "category": "places",
+      "solo": "I want to go to the playground",
+      "chain": { "default": "the playground", "after_i": "want to go to the playground", "after_want": "to go to the playground", "after_go": "to the playground" },
+      "tags": ["playground", "swing", "slide", "recess", "climb", "fun"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDFE5",
+      "category": "places",
+      "solo": "I need to go to the hospital",
+      "chain": { "default": "the hospital", "after_i": "need to go to the hospital", "after_want": "to go to the hospital", "after_go": "to the hospital" },
+      "tags": ["hospital", "doctor", "emergency", "medical", "clinic"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDFAA",
+      "category": "places",
+      "solo": "I want to go to a restaurant",
+      "chain": { "default": "a restaurant", "after_i": "want to go to a restaurant", "after_want": "to go to a restaurant", "after_go": "to a restaurant" },
+      "tags": ["restaurant", "eat out", "dine", "dining", "cafe"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDFCA",
+      "category": "places",
+      "solo": "I want to go to the pool",
+      "chain": { "default": "the pool", "after_i": "want to go to the pool", "after_want": "to go to the pool", "after_go": "to the pool" },
+      "tags": ["pool", "swimming", "swim", "water park", "splash"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDCDA",
+      "category": "places",
+      "solo": "I want to go to the library",
+      "chain": { "default": "the library", "after_i": "want to go to the library", "after_want": "to go to the library", "after_go": "to the library" },
+      "tags": ["library", "books", "reading", "quiet", "study"],
+      "grammar_role": "object"
+    },
+
+    {
+      "emoji": "\uD83E\uDD5B",
       "category": "food",
-      "solo": "I want an apple",
-      "chain": { "default": "an apple", "after_i": "want an apple" },
-      "tags": ["food", "apple", "fruit", "snack"],
+      "solo": "I want milk",
+      "chain": { "default": "milk", "after_i": "want milk", "after_want": "milk" },
+      "tags": ["milk", "drink", "dairy", "glass of milk"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDDC3",
+      "category": "food",
+      "solo": "I want juice",
+      "chain": { "default": "juice", "after_i": "want juice", "after_want": "juice" },
+      "tags": ["juice", "drink", "apple juice", "orange juice", "fruit"],
       "grammar_role": "object"
     },
     {
       "emoji": "\uD83C\uDF55",
       "category": "food",
       "solo": "I want pizza",
-      "chain": { "default": "pizza", "after_i": "want pizza" },
-      "tags": ["food", "pizza", "hungry", "meal"],
+      "chain": { "default": "pizza", "after_i": "want pizza", "after_want": "pizza" },
+      "tags": ["pizza", "food", "cheese", "slice", "pepperoni"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF54",
+      "category": "food",
+      "solo": "I want a hamburger",
+      "chain": { "default": "a hamburger", "after_i": "want a hamburger", "after_want": "a hamburger" },
+      "tags": ["hamburger", "burger", "food", "cheeseburger", "meal"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF57",
+      "category": "food",
+      "solo": "I want chicken",
+      "chain": { "default": "chicken", "after_i": "want chicken", "after_want": "chicken" },
+      "tags": ["chicken", "food", "nuggets", "meat", "drumstick"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF4E",
+      "category": "food",
+      "solo": "I want an apple",
+      "chain": { "default": "an apple", "after_i": "want an apple", "after_want": "an apple" },
+      "tags": ["apple", "fruit", "snack", "healthy", "red apple"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF4C",
+      "category": "food",
+      "solo": "I want a banana",
+      "chain": { "default": "a banana", "after_i": "want a banana", "after_want": "a banana" },
+      "tags": ["banana", "fruit", "snack", "yellow", "healthy"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF6A",
+      "category": "food",
+      "solo": "I want a cookie",
+      "chain": { "default": "a cookie", "after_i": "want a cookie", "after_want": "a cookie" },
+      "tags": ["cookie", "treat", "sweet", "snack", "dessert", "chocolate chip"],
       "grammar_role": "object"
     },
     {
       "emoji": "\uD83C\uDF66",
       "category": "food",
       "solo": "I want ice cream",
-      "chain": { "default": "ice cream", "after_i": "want ice cream" },
-      "tags": ["food", "ice cream", "dessert", "sweet", "treat"],
+      "chain": { "default": "ice cream", "after_i": "want ice cream", "after_want": "ice cream" },
+      "tags": ["ice cream", "dessert", "sweet", "treat", "cone", "sundae"],
       "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF5E",
+      "category": "food",
+      "solo": "I want bread",
+      "chain": { "default": "bread", "after_i": "want bread", "after_want": "bread" },
+      "tags": ["bread", "toast", "food", "carbs", "loaf"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDDC0",
+      "category": "food",
+      "solo": "I want cheese",
+      "chain": { "default": "cheese", "after_i": "want cheese", "after_want": "cheese" },
+      "tags": ["cheese", "food", "dairy", "grilled cheese", "snack"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF5A",
+      "category": "food",
+      "solo": "I want rice",
+      "chain": { "default": "rice", "after_i": "want rice", "after_want": "rice" },
+      "tags": ["rice", "food", "grain", "meal", "bowl"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF5D",
+      "category": "food",
+      "solo": "I want pasta",
+      "chain": { "default": "pasta", "after_i": "want pasta", "after_want": "pasta" },
+      "tags": ["pasta", "noodles", "spaghetti", "mac and cheese", "food"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF6B",
+      "category": "food",
+      "solo": "I want a snack",
+      "chain": { "default": "a snack", "after_i": "want a snack", "after_want": "a snack" },
+      "tags": ["snack", "treat", "munch", "nibble", "chocolate"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF6C",
+      "category": "food",
+      "solo": "I want candy",
+      "chain": { "default": "candy", "after_i": "want candy", "after_want": "candy" },
+      "tags": ["candy", "sweet", "treat", "sugar", "gummy"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDD63",
+      "category": "food",
+      "solo": "I want cereal",
+      "chain": { "default": "cereal", "after_i": "want cereal", "after_want": "cereal" },
+      "tags": ["cereal", "breakfast", "bowl", "morning", "food"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDD6B",
+      "category": "food",
+      "solo": "I want yogurt",
+      "chain": { "default": "yogurt", "after_i": "want yogurt", "after_want": "yogurt" },
+      "tags": ["yogurt", "snack", "dairy", "healthy", "food"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDD6A",
+      "category": "food",
+      "solo": "I want a sandwich",
+      "chain": { "default": "a sandwich", "after_i": "want a sandwich", "after_want": "a sandwich" },
+      "tags": ["sandwich", "food", "bread", "lunch", "meal"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF82",
+      "category": "food",
+      "solo": "I want cake",
+      "chain": { "default": "cake", "after_i": "want cake", "after_want": "cake" },
+      "tags": ["cake", "birthday", "dessert", "sweet", "treat", "party"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF7F",
+      "category": "food",
+      "solo": "I want popcorn",
+      "chain": { "default": "popcorn", "after_i": "want popcorn", "after_want": "popcorn" },
+      "tags": ["popcorn", "snack", "movie", "treat", "salty"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF53",
+      "category": "food",
+      "solo": "I want strawberries",
+      "chain": { "default": "strawberries", "after_i": "want strawberries", "after_want": "strawberries" },
+      "tags": ["strawberry", "fruit", "berry", "snack", "red", "healthy"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF5C",
+      "category": "food",
+      "solo": "I want soup",
+      "chain": { "default": "soup", "after_i": "want soup", "after_want": "soup" },
+      "tags": ["soup", "broth", "warm", "bowl", "noodle soup", "food"],
+      "grammar_role": "object"
+    },
+
+    {
+      "emoji": "\uD83D\uDCF1",
+      "category": "things",
+      "solo": "I want my phone",
+      "chain": { "default": "my phone", "after_i": "want my phone", "after_want": "my phone" },
+      "tags": ["phone", "cell phone", "mobile", "call", "text"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDCF0",
+      "category": "things",
+      "solo": "I want to watch TV",
+      "chain": { "default": "the TV", "after_i": "want to watch TV", "after_want": "to watch TV" },
+      "tags": ["TV", "television", "show", "cartoon", "movie", "screen"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDCBB",
+      "category": "things",
+      "solo": "I want my tablet",
+      "chain": { "default": "my tablet", "after_i": "want my tablet", "after_want": "my tablet" },
+      "tags": ["tablet", "iPad", "computer", "screen", "laptop", "device"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDCD5",
+      "category": "things",
+      "solo": "I want my book",
+      "chain": { "default": "a book", "after_i": "want my book", "after_want": "a book" },
+      "tags": ["book", "read", "story", "reading", "novel"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDDF8",
+      "category": "things",
+      "solo": "I want my toy",
+      "chain": { "default": "a toy", "after_i": "want my toy", "after_want": "a toy" },
+      "tags": ["toy", "play", "stuffed animal", "teddy", "plush", "figure"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\u26BD",
+      "category": "things",
+      "solo": "I want my ball",
+      "chain": { "default": "a ball", "after_i": "want my ball", "after_want": "a ball" },
+      "tags": ["ball", "soccer", "play", "throw", "catch", "kick"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDECC",
+      "category": "things",
+      "solo": "I want my blanket",
+      "chain": { "default": "my blanket", "after_i": "want my blanket", "after_want": "my blanket" },
+      "tags": ["blanket", "cozy", "warm", "comfort", "cover", "snuggle"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\u2601\uFE0F",
+      "category": "things",
+      "solo": "I want my pillow",
+      "chain": { "default": "my pillow", "after_i": "want my pillow", "after_want": "my pillow" },
+      "tags": ["pillow", "sleep", "soft", "bed", "head", "rest", "cloud"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDC5F",
+      "category": "things",
+      "solo": "I need my shoes",
+      "chain": { "default": "shoes", "after_i": "need my shoes", "after_want": "my shoes" },
+      "tags": ["shoes", "sneakers", "boots", "feet", "footwear", "sandals"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDC5A",
+      "category": "things",
+      "solo": "I need my clothes",
+      "chain": { "default": "clothes", "after_i": "need my clothes", "after_want": "my clothes" },
+      "tags": ["clothes", "clothing", "shirt", "pants", "outfit", "jacket"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDF92",
+      "category": "things",
+      "solo": "I want my bag",
+      "chain": { "default": "my bag", "after_i": "want my bag", "after_want": "my bag" },
+      "tags": ["bag", "backpack", "purse", "school bag", "pack"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDD43",
+      "category": "things",
+      "solo": "I want my cup",
+      "chain": { "default": "my cup", "after_i": "want my cup", "after_want": "my cup" },
+      "tags": ["cup", "glass", "mug", "drink", "bottle"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDFB5",
+      "category": "things",
+      "solo": "I want music",
+      "chain": { "default": "music", "after_i": "want music", "after_want": "music" },
+      "tags": ["music", "song", "singing", "melody", "tunes", "listen"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDFAE",
+      "category": "things",
+      "solo": "I want to play a game",
+      "chain": { "default": "a game", "after_i": "want to play a game", "after_want": "to play a game" },
+      "tags": ["game", "video game", "play", "board game", "fun"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDE99",
+      "category": "things",
+      "solo": "I want my toy car",
+      "chain": { "default": "a toy car", "after_i": "want my toy car", "after_want": "a toy car" },
+      "tags": ["toy car", "car", "vehicle", "race", "vroom"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDDF1",
+      "category": "things",
+      "solo": "I want to play with blocks",
+      "chain": { "default": "blocks", "after_i": "want to play with blocks", "after_want": "to play with blocks" },
+      "tags": ["blocks", "lego", "build", "stack", "construct"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83D\uDD8D\uFE0F",
+      "category": "things",
+      "solo": "I want to draw",
+      "chain": { "default": "crayons", "after_i": "want to draw", "after_want": "to draw" },
+      "tags": ["crayon", "draw", "color", "art", "pencil", "marker", "paint"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\u2B50",
+      "category": "things",
+      "solo": "I want a sticker",
+      "chain": { "default": "a sticker", "after_i": "want a sticker", "after_want": "a sticker" },
+      "tags": ["sticker", "star", "reward", "prize", "gold star"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83C\uDFA8",
+      "category": "things",
+      "solo": "I want to do art",
+      "chain": { "default": "art", "after_i": "want to do art", "after_want": "to do art" },
+      "tags": ["art", "paint", "draw", "create", "craft", "color"],
+      "grammar_role": "object"
+    },
+    {
+      "emoji": "\uD83E\uDDE9",
+      "category": "things",
+      "solo": "I want to do a puzzle",
+      "chain": { "default": "a puzzle", "after_i": "want to do a puzzle", "after_want": "to do a puzzle" },
+      "tags": ["puzzle", "jigsaw", "game", "pieces", "think"],
+      "grammar_role": "object"
+    },
+
+    {
+      "emoji": "\uD83D\uDC4D",
+      "category": "modifiers",
+      "solo": "Yes",
+      "chain": { "default": "yes" },
+      "tags": ["yes", "ok", "agree", "correct", "right", "thumbs up", "affirmative"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDC4E",
+      "category": "modifiers",
+      "solo": "No",
+      "chain": { "default": "no" },
+      "tags": ["no", "not", "disagree", "wrong", "nope", "thumbs down"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDE4F",
+      "category": "modifiers",
+      "solo": "Please",
+      "chain": { "default": "please" },
+      "tags": ["please", "polite", "asking nicely", "request"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDE4C",
+      "category": "modifiers",
+      "solo": "Thank you",
+      "chain": { "default": "thank you" },
+      "tags": ["thank you", "thanks", "grateful", "appreciate", "thankful"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDE1E",
+      "category": "modifiers",
+      "solo": "I am sorry",
+      "chain": { "default": "sorry", "after_i": "am sorry" },
+      "tags": ["sorry", "apologize", "my bad", "oops", "forgive"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDC18",
+      "category": "modifiers",
+      "solo": "Big",
+      "chain": { "default": "big", "after_want": "a big one" },
+      "tags": ["big", "large", "huge", "giant", "enormous"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDC1C",
+      "category": "modifiers",
+      "solo": "Small",
+      "chain": { "default": "small", "after_want": "a small one" },
+      "tags": ["small", "little", "tiny", "mini", "short"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDD25",
+      "category": "modifiers",
+      "solo": "Hot",
+      "chain": { "default": "hot" },
+      "tags": ["hot", "warm", "heat", "fire", "burning", "temperature"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\u2744\uFE0F",
+      "category": "modifiers",
+      "solo": "Cold",
+      "chain": { "default": "cold" },
+      "tags": ["cold", "cool", "freezing", "ice", "chilly", "temperature"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83C\uDF1F",
+      "category": "modifiers",
+      "solo": "Good",
+      "chain": { "default": "good", "after_i": "feel good", "after_feel": "good" },
+      "tags": ["good", "great", "nice", "wonderful", "excellent", "awesome"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDCA9",
+      "category": "modifiers",
+      "solo": "Bad",
+      "chain": { "default": "bad", "after_i": "feel bad", "after_feel": "bad" },
+      "tags": ["bad", "yucky", "gross", "terrible", "awful", "not good"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDC07",
+      "category": "modifiers",
+      "solo": "Fast",
+      "chain": { "default": "fast", "after_want": "it fast" },
+      "tags": ["fast", "quick", "speed", "hurry", "rapid"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83D\uDC22",
+      "category": "modifiers",
+      "solo": "Slow",
+      "chain": { "default": "slow", "after_want": "it slow" },
+      "tags": ["slow", "slowly", "careful", "patience", "gentle"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\u2728",
+      "category": "modifiers",
+      "solo": "New",
+      "chain": { "default": "new", "after_want": "a new one" },
+      "tags": ["new", "fresh", "different", "another", "brand new"],
+      "grammar_role": "modifier"
+    },
+    {
+      "emoji": "\uD83E\uDEF6",
+      "category": "modifiers",
+      "solo": "Mine",
+      "chain": { "default": "mine" },
+      "tags": ["mine", "my", "belongs to me", "own", "have"],
+      "grammar_role": "modifier"
     }
   ]
 }
