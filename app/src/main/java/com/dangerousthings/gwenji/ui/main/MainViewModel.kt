@@ -1,6 +1,7 @@
 package com.dangerousthings.gwenji.ui.main
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.dangerousthings.gwenji.data.emoji.EmojiRepository
@@ -81,7 +82,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun speak() {
         val state = _uiState.value
-        if (state.assemblyResult.text.isBlank()) return
+        Log.d("GwenjiVM", "speak() called, text='${state.assemblyResult.text}', emojis=${state.sentenceEmojis.size}")
+        if (state.assemblyResult.text.isBlank()) {
+            Log.w("GwenjiVM", "Assembly text is blank, not speaking")
+            return
+        }
         viewModelScope.launch {
             historyDao.insert(
                 HistoryEntry(

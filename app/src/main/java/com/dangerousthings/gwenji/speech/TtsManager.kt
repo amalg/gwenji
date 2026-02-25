@@ -4,6 +4,7 @@ import android.content.Context
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.speech.tts.Voice
+import android.util.Log
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import java.util.Locale
@@ -22,6 +23,8 @@ class TtsManager private constructor(context: Context) {
     private var onDone: (() -> Unit)? = null
 
     companion object {
+        private const val TAG = "GwenjiTTS"
+
         @Volatile
         private var INSTANCE: TtsManager? = null
 
@@ -33,12 +36,22 @@ class TtsManager private constructor(context: Context) {
     }
 
     init {
-        tts = TextToSpeech(context) { status ->
+        Log.d(TAG, "Initializing TTS engine...")
+        tts = TextToSpeech(context.applicationContext) { status ->
+            Log.d(TAG, "TTS onInit callback, status=$status (SUCCESS=${TextToSpeech.SUCCESS})")
             if (status == TextToSpeech.SUCCESS) {
-                isInitialized = true
-                tts?.language = Locale.US
-                tts?.setSpeechRate(0.85f)
-                setupListener()
+                val result = tts?.setLanguage(Locale.US)
+                Log.d(TAG, "setLanguage result=$result (MISSING_DATA=${TextToSpeech.LANG_MISSING_DATA}, NOT_SUPPORTED=${TextToSpeech.LANG_NOT_SUPPORTED})")
+                if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e(TAG, "Language not supported or missing data")
+                } else {
+                    isInitialized = true
+                    tts?.setSpeechRate(0.85f)
+                    setupListener()
+                    Log.d(TAG, "TTS initialized successfully")
+                }
+            } else {
+                Log.e(TAG, "TTS initialization failed with status=$status")
             }
         }
     }
@@ -63,9 +76,18 @@ class TtsManager private constructor(context: Context) {
     }
 
     fun speak(text: String, onComplete: (() -> Unit)? = null) {
-        if (!isInitialized || text.isBlank()) return
+        Log.d(TAG, "speak() called: text='$text', isInitialized=$isInitialized, tts=$tts")
+        if (!isInitialized) {
+            Log.w(TAG, "TTS not initialized yet, cannot speak")
+            return
+        }
+        if (text.isBlank()) {
+            Log.w(TAG, "Text is blank, nothing to speak")
+            return
+        }
         onDone = onComplete
-        tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, "gwenji_utterance")
+        val result = tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, "gwenji_utterance")
+        Log.d(TAG, "tts.speak() returned: $result (SUCCESS=${TextToSpeech.SUCCESS})")
     }
 
     fun stop() {
