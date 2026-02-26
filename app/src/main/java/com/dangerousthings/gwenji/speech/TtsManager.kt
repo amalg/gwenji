@@ -85,6 +85,8 @@ class TtsManager private constructor(context: Context) {
             Log.w(TAG, "Text is blank, nothing to speak")
             return
         }
+        tts?.stop()
+        _progress.value = SpeechProgress()
         onDone = onComplete
         val result = tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, "gwenji_utterance")
         Log.d(TAG, "tts.speak() returned: $result (SUCCESS=${TextToSpeech.SUCCESS})")

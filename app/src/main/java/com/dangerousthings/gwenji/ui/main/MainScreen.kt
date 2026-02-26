@@ -85,17 +85,10 @@ fun MainScreen(
                 modifier = Modifier.weight(1f)
             )
 
-            // "Say it!" / "Stop" button at bottom
+            // "Say it!" button at bottom -- always speaks (or re-speaks) the current sentence
             Button(
-                onClick = {
-                    if (speechProgress.isSpeaking) {
-                        viewModel.stopSpeaking()
-                    } else {
-                        viewModel.speak()
-                    }
-                },
-                enabled = speechProgress.isSpeaking ||
-                    uiState.assemblyResult.text.isNotBlank(),
+                onClick = { viewModel.speak() },
+                enabled = uiState.assemblyResult.text.isNotBlank(),
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(72.dp)
@@ -106,7 +99,7 @@ fun MainScreen(
                 )
             ) {
                 Text(
-                    text = if (speechProgress.isSpeaking) "Stop" else "Say it!",
+                    text = "Say it!",
                     style = MaterialTheme.typography.titleLarge
                 )
             }

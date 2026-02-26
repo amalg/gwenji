@@ -74,11 +74,14 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun clearSentence() {
+        lastSpokenText = null
         _uiState.value = _uiState.value.copy(
             sentenceEmojis = emptyList(),
             assemblyResult = AssemblyResult("", emptyList())
         )
     }
+
+    private var lastSpokenText: String? = null
 
     fun speak() {
         val state = _uiState.value
@@ -87,15 +90,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             Log.w("GwenjiVM", "Assembly text is blank, not speaking")
             return
         }
-        viewModelScope.launch {
-            historyDao.insert(
-                HistoryEntry(
-                    emojiSequence = state.sentenceEmojis.joinToString("") { it.emoji },
-                    spokenText = state.assemblyResult.text
+        val text = state.assemblyResult.text
+        // Only save to history if this is a new sentence, not a repeat
+        if (text != lastSpokenText) {
+            viewModelScope.launch {
+                historyDao.insert(
+                    HistoryEntry(
+                        emojiSequence = state.sentenceEmojis.joinToString("") { it.emoji },
+                        spokenText = text
+                    )
                 )
-            )
+            }
+            lastSpokenText = text
         }
-        ttsManager.speak(state.assemblyResult.text)
+        ttsManager.speak(text)
     }
 
     fun stopSpeaking() {
